@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Comparticion de secretos</title>
+  </head>
+  <body>
+    <h1>Compartición de secretos</h1>
+    <table id="tabla">
+      <tr>
+        <td>
+          <h2>Dividir secreto</h2>
+        </td>
+        <td>
+          <h2>Reconstruir secreto (una parte por linea)</h2>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+              Se necesitarán
+              <input id="necesarias" type="number" min="2" max="255">
+              partes de
+              <input id="todas"  type="number" min="2" max="255">
+              para reconstruir el secreto
+          </div>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Contraseña:
+          <input id="pass" type="text"/>
+        </td>
+        <td>
+          Contraseña:
+          <input id="pass1" type="text"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+          <textarea id="secreto" class="form-control" rows=10 placeholder="Escribe aquí tu secreto"></textarea>
+          </div>
+        </td>
+        <td>
+          <div>
+            <textarea id="partes" class="form-control" rows=10 ></textarea>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button id="dividir" type="button" class="btn btn-success" onclick="generar()">Generar secreto</button>
+        </td>
+        <td>
+          <button id="reconstruir" type="button" class="btn btn-success" onclick="reconstruir()">Reconstruir secreto</button>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">
+          <h3>PARTES:</h3>
+          <div id="divPartes">
+          </div>
+        </td>
+        <td>
+          <textarea id="reconstruido" class="form-control" rows=10 readonly></textarea>
+        </td>
+  </table>
+
+    <script src="js/BigInteger.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="js/secretos.js"></script>
+  </body>
+</html>
